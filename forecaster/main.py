@@ -1,9 +1,9 @@
 import numpy as np
 
-from src.algos import run_training, run_testing, calculate_metric, get_real_data, data_slice, data_scaling
-from src.config import Settings
-from src.data import get_marketdata
-from src.walkforward import get_intervals
+from forecaster.algos import run_training, run_testing, calculate_metric, get_real_data, data_slice, data_scaling
+from forecaster.config import Settings
+from forecaster.data import get_marketdata
+from forecaster.walkforward import get_intervals
 
 settings = Settings()
 

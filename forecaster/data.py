@@ -1,7 +1,7 @@
 import pandas as pd
 import yfinance as yf
 
-from src.date import str2datetime
+from forecaster.date import str2datetime
 
 
 def get_marketdata(
