@@ -3,6 +3,8 @@
 
 ## Code a forecaster
 
+the detail instruction is provided in [this page](https://docs.google.com/document/d/1jzxk1itNAUgwmJIzWonfWh8PlGJTIb0yvbpnKrwbyJQ/edit#)
+
 In this section you are asked to code 'data preparation', 'training', and 'validation' pipeline
 
 1. create your virtual environment
@@ -33,3 +35,4 @@ your training, and testing data slice is govern by this
 t_start_validating in src.walkforward.get_intervals
 - the goal is for you to calculate avg_mae based on mae across different time interval
 - You don't have to always follow the patterns in main.py or algos.py. You can try your best to be creative in this test.
+- You are free to include other marketdata such as SNP500 to make multivariate timeseries
