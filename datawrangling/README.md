@@ -14,7 +14,7 @@ into a table described in [this page](https://docs.google.com/document/d/1jzxk1i
   - tenor variation:SW,1M,2M,3M,6M,9M,1Y,2Y
 - name : extracted from Reference Company and Security Description
   - name variation:O=,O=R,10P,25P,45P,10C,25C,45C,RR,BF,R10,B10
-  - change 'O=R' to 'A' and 'O=' to 'A'
+  - change 'O=R' to 'ATM' and 'O=' to 'ATM'
 - close : close. simply copy the value
 
 ## Mapping
