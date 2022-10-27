@@ -11,12 +11,12 @@ if __name__ == '__main__':
     marketdata = get_marketdata(
         start_date="2015-01-01"
     )
-    times = get_intervals(
+    walkforward_intervals = get_intervals(
         t_start_validating="2021-06-27",
         t_start_training="2020-06-27"
     )
     list_mae = []
-    for key, interval in times.items():
+    for key, interval in walkforward_intervals.items():
         scaled_data=data_scaling(marketdata,interval)
         train_data, val_data, test_data = data_slice(scaled_data,interval)
         model = run_training(train_data, val_data)

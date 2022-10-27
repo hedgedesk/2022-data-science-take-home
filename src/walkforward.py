@@ -76,7 +76,7 @@ def get_intervals(
         t_start_validating: str = "2021-06-27",
         t_start_training: str = "2020-06-27"
 ):
-    times = Walkforward().generate_walk_forward_interval(
+    walkforward_intervals = Walkforward().generate_walk_forward_interval(
         stride=60,
         last_date="2022-10-27",
         t_end_testing="2021-10-27",
@@ -87,14 +87,14 @@ def get_intervals(
         mode='following',
         prefix="period"
     )
-    return times
+    return walkforward_intervals
 
 
 if __name__ == '__main__':
-    times = get_intervals()
-    for val in times.values():
+    walkforward_intervals = get_intervals()
+    for val in walkforward_intervals.values():
         print('t_end_testing -> t_start_testing: ', (val['t_end_testing'] - val['t_start_testing']).days)
         print('t_start_testing -> t_start_validating: ', (val['t_start_testing'] - val['t_start_validating']).days)
         print('t_start_validating -> t_start_training: ', (val['t_start_validating'] - val['t_start_training']).days)
-    for name, time in times.items():
+    for name, time in walkforward_intervals.items():
         print(name, time)

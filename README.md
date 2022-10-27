@@ -18,12 +18,12 @@ In this section you are asked to code 'data preparation', 'training', and 'valid
 ## src.walkforward.get_intervals
 ```python
 from src.walkforward import get_intervals
-times = get_intervals(
+walkforward_intervals = get_intervals(
 t_start_validating="2021-06-27",
 t_start_training="2020-06-27"
 )
 ```
-times will give you time segmentation to perform walkforward validation.
+walkforward_intervals will give you time segmentation to perform walkforward validation.
 your training, and testing data slice is govern by this
 
 
