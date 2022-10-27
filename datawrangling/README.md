@@ -17,8 +17,9 @@ into a table described in [this page](https://docs.google.com/document/d/1jzxk1i
   - change 'O=R' to 'ATM' and 'O=' to 'ATM'
 - close : close. simply copy the value
 
-## Mapping
-Refer to these mapping as hints
+## Example
+![image](https://user-images.githubusercontent.com/91622834/198265712-a18a5da9-eb3b-43dd-a088-93feb9df6726.png)
+
 
 
 
