@@ -6,8 +6,8 @@ from src.date import str2datetime
 
 def get_marketdata(
         tickers: str = 'USDGBP=X',
-        start_date: str = "2022-10-30",
-        end_date: str = "2015-01-01",
+        start_date: str = "2015-01-01",
+        end_date: str = "2022-10-30",
         interval: str = '1d'
 ) -> pd.DataFrame:
     """
