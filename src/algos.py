@@ -12,7 +12,18 @@ def get_real_data(interval: Dict[str, datetime])->pd.DataFrame:
     """
     print(f"slice or real data from {interval['t_start_testing']} to {interval['t_end_testing']}")
     return pd.DataFrame()
-def data_preparation(interval: Dict[str, datetime])->Tuple[pd.DataFrame,pd.DataFrame,pd.DataFrame]:
+
+def data_scaling(data:pd.DataFrame,interval: Dict[str, datetime])->pd.DataFrame:
+    """
+    Perform scaling here
+    :param data: marketdata
+    :param interval: scaling params such as mean or var should be calculated only use training data
+    :return:
+    """
+    scaled_data = data
+    return scaled_data
+
+def data_slice(data:pd.DataFrame,interval: Dict[str, datetime]):
     """
     - split data into training, validation and testing
     - in case your model does not take validation data, you can just split it into training and testing
@@ -31,10 +42,15 @@ def data_preparation(interval: Dict[str, datetime])->Tuple[pd.DataFrame,pd.DataF
     - remember that you CAN NOT change testing interval which is from interval['t_start_testing'] to interval['t_end_testing']
     - data don't have to be in pd.DataFrame, you are free to use any type of data such as numpy
     """
-    return pd.DataFrame(),pd.DataFrame(),pd.DataFrame()
+
+    train_data=data.loc[interval['t_start_training']:interval['t_start_validating']]
+    val_data=data.loc[interval['t_start_validating']:interval['t_start_testing']]
+    test_data=data.loc[interval['t_start_testing']:interval['t_end_testing']]
+    return train_data, val_data, test_data
 
 
-def run_training(train_data:pd.DataFrame, val_data:Optional[pd.DataFrame]=None)->Optional['forecaster model']:
+
+def run_training(train_data:pd.DataFrame, val_data:Optional[pd.DataFrame]=None):
     """
     Use train_data and val_data to train your model
     :param train_data:
@@ -44,7 +60,7 @@ def run_training(train_data:pd.DataFrame, val_data:Optional[pd.DataFrame]=None)-
     return None
 
 
-def run_testing(model:Optional['forecaster model'],test_data:pd.DataFrame)->pd.DataFrame:
+def run_testing(model,test_data:pd.DataFrame)->pd.DataFrame:
     """
     :param model: your ai model
     :param test_data: test data

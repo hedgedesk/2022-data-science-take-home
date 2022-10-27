@@ -1,6 +1,6 @@
 import numpy as np
 
-from src.algos import data_preparation, run_training, run_testing, calculate_metric, get_real_data
+from src.algos import run_training, run_testing, calculate_metric, get_real_data, data_slice, data_scaling
 from src.config import Settings
 from src.data import get_marketdata
 from src.walkforward import get_intervals
@@ -9,8 +9,7 @@ settings = Settings()
 
 if __name__ == '__main__':
     marketdata = get_marketdata(
-        start_date="2015-01-01",
-        end_date="2022-10-30",
+        start_date="2015-01-01"
     )
     times = get_intervals(
         t_start_validating="2021-06-27",
@@ -18,7 +17,8 @@ if __name__ == '__main__':
     )
     list_mae = []
     for key, interval in times.items():
-        train_data, val_data, test_data = data_preparation(interval)
+        scaled_data=data_scaling(marketdata,interval)
+        train_data, val_data, test_data = data_slice(scaled_data,interval)
         model = run_training(train_data, val_data)
         forecast_results = run_testing(model, test_data)
 
