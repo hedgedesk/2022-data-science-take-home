@@ -1,8 +1,10 @@
 """
-load Options update.csv in the datasets folder and follow the instruction in the following page
+load Options.csv in the datasets folder and follow the instruction in the following page
 """
 import pandas as pd
+from src.config import Settings
 
+settings = Settings()
 def data_processing(df_raw:pd.DataFrame)->pd.DataFrame:
     """
     Perform data wrangling here so that
@@ -14,5 +16,6 @@ def data_processing(df_raw:pd.DataFrame)->pd.DataFrame:
 
 
 if __name__ == '__main__':
-    df_raw=pd.read_csv('data.csv')
+    df_raw=pd.read_csv(settings.datasets_dir/"Options.csv")
     df_clean=data_processing(df_raw)
+    print(df_clean)

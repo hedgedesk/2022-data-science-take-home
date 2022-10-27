@@ -1,11 +1,9 @@
 import numpy as np
 
 from src.forecaster.algos import run_training, run_testing, calculate_metric, get_real_data, data_slicing, data_scaling
-from src.forecaster.config import Settings
 from src.forecaster.data import get_marketdata
 from src.forecaster.walkforward import get_intervals
 
-settings = Settings()
 
 if __name__ == '__main__':
     marketdata = get_marketdata(

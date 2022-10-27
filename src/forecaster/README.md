@@ -5,7 +5,9 @@ the detail instruction is provided in [this page](https://docs.google.com/docume
 In this section you are asked to code 'data preparation', 'training', and 'validation' pipeline
 
 ## run this to execute pipeline
--  ```python main.py``` to run the entire pipeline
+```shell
+python src/forecaster/main.py
+```
 
 
 ## Explanation for each script
