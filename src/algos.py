@@ -5,13 +5,14 @@ from typing import Dict, Tuple, Optional
 
 import pandas as pd
 
-def get_real_data(interval: Dict[str, datetime])->pd.DataFrame:
+def get_real_data(data:pd.DataFrame,interval: Dict[str, datetime])->pd.DataFrame:
     """
     real data consist of index which is date and real price
     :return:
     """
     print(f"slice or real data from {interval['t_start_testing']} to {interval['t_end_testing']}")
-    return pd.DataFrame()
+    real_data = data.loc[interval['t_start_testing']:interval['t_end_testing']]
+    return real_data
 
 def data_scaling(data:pd.DataFrame,interval: Dict[str, datetime])->pd.DataFrame:
     """
@@ -72,7 +73,8 @@ def run_testing(model,test_data:pd.DataFrame)->pd.DataFrame:
 
 def calculate_metric(forecast_value:pd.DataFrame, real_value:pd.DataFrame) -> float:
     """
-    calculate metric for forecast_value and real_value
+    calculate metric for forecast_value and real_value.
+    - REMEMBER: for regression case, forecast_value have not been scaled back to the real value
     :param forecast_value: 
     :param real_value: 
     :return: 

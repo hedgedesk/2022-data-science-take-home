@@ -22,7 +22,7 @@ if __name__ == '__main__':
         model = run_training(train_data, val_data)
         forecast_results = run_testing(model, test_data)
 
-        real_data = get_real_data(interval)
+        real_data = get_real_data(marketdata,interval)
         mae = calculate_metric(forecast_results, real_data)
         list_mae.append(mae)
 
