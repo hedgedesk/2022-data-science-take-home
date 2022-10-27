@@ -3,7 +3,7 @@
 
 ## Code a forecaster
 
-the detail instruction is provided in [this page](https://docs.google.com/document/d/1jzxk1itNAUgwmJIzWonfWh8PlGJTIb0yvbpnKrwbyJQ/edit#)
+the detail instruction is provided in [this page](https://drive.google.com/drive/folders/1qoSrSde9dLzmDZ2s7QR7Hf67bD7fq8Dx)
 
 In this section you are asked to code 'data preparation', 'training', and 'validation' pipeline
 
