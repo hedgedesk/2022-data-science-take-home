@@ -17,8 +17,9 @@ In this section you are asked to code 'data preparation', 'training', and 'valid
 ## Walkforward intervals
 ```walkforward_intervals``` will give you time segmentation to perform walkforward validation.
 Your training, and testing data slice is govern by this
+
 ```python
-from forecaster.walkforward import get_intervals
+from src.forecaster import get_intervals
 
 walkforward_intervals = get_intervals(
     t_start_validating="2021-06-27",

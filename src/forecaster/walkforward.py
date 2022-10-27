@@ -3,7 +3,7 @@ from datetime import datetime
 from datetime import timedelta
 from typing import Union, Optional
 
-from forecaster.date import datetime2str
+from src.forecaster.date import datetime2str
 
 
 def _add_affixes(word: str, prefix: str, suffix: str):
