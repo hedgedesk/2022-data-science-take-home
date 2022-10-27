@@ -4,9 +4,8 @@ the detail instruction is provided in [this page](https://docs.google.com/docume
 
 In this section you are asked to code 'data preparation', 'training', and 'validation' pipeline
 
-1. create your virtual environment
-2. ```pip install -r requirements.txt```
-3. ```python main.py``` to run the entire pipeline
+## run this to execute pipeline
+-  ```python main.py``` to run the entire pipeline
 
 
 ## Explanation for each script
@@ -19,8 +18,7 @@ In this section you are asked to code 'data preparation', 'training', and 'valid
 Your training, and testing data slice is govern by this
 
 ```python
-from src.forecaster import get_intervals
-
+from src.forecaster.walkforward import get_intervals
 walkforward_intervals = get_intervals(
     t_start_validating="2021-06-27",
     t_start_training="2020-06-27"
