@@ -10,4 +10,3 @@ class Settings:
     experiments_dir: Path = storage_dir / "exp_name"
 
 
-settings = Settings()
