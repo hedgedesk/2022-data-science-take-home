@@ -14,7 +14,7 @@ def get_real_data(interval: Dict[str, datetime])->pd.DataFrame:
     return pd.DataFrame()
 def data_preparation(interval: Dict[str, datetime])->Tuple[pd.DataFrame,pd.DataFrame,pd.DataFrame]:
     """
-    - this function takes interval in order to split data into training, validation and testing
+    - split data into training, validation and testing
     - in case your model does not take validation data, you can just split it into training and testing
     :param interval: walkforward interval
     :return: train_data, validation_data, testing_data
@@ -34,15 +34,31 @@ def data_preparation(interval: Dict[str, datetime])->Tuple[pd.DataFrame,pd.DataF
     return pd.DataFrame(),pd.DataFrame(),pd.DataFrame()
 
 
-def run_training(train_data:pd.DataFrame, val_data:pd.DataFrame)->Optional['forecaster model']:
+def run_training(train_data:pd.DataFrame, val_data:Optional[pd.DataFrame]=None)->Optional['forecaster model']:
+    """
+    Use train_data and val_data to train your model
+    :param train_data:
+    :param val_data:
+    :return: model
+    """
     return None
 
 
 def run_testing(model:Optional['forecaster model'],test_data:pd.DataFrame)->pd.DataFrame:
+    """
+    :param model: your ai model
+    :param test_data: test data
+    :return: forecasting result for test_data
+    """
     forecast_results=pd.DataFrame()
     return forecast_results
 
 
 def calculate_metric(forecast_value:pd.DataFrame, real_value:pd.DataFrame) -> float:
-
+    """
+    calculate metric for forecast_value and real_value
+    :param forecast_value: 
+    :param real_value: 
+    :return: 
+    """
     return 0.5
