@@ -1,6 +1,6 @@
 import numpy as np
 
-from forecaster.algos import run_training, run_testing, calculate_metric, get_real_data, data_slice, data_scaling
+from forecaster.algos import run_training, run_testing, calculate_metric, get_real_data, data_slicing, data_scaling
 from forecaster.config import Settings
 from forecaster.data import get_marketdata
 from forecaster.walkforward import get_intervals
@@ -18,7 +18,7 @@ if __name__ == '__main__':
     list_mae = []
     for key, interval in walkforward_intervals.items():
         scaled_data=data_scaling(marketdata,interval)
-        train_data, val_data, test_data = data_slice(scaled_data,interval)
+        train_data, val_data, test_data = data_slicing(scaled_data,interval)
         model = run_training(train_data, val_data)
         forecast_results = run_testing(model, test_data)
 

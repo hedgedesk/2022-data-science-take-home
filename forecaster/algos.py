@@ -24,7 +24,7 @@ def data_scaling(data:pd.DataFrame,interval: Dict[str, datetime])->pd.DataFrame:
     scaled_data = data
     return scaled_data
 
-def data_slice(data:pd.DataFrame,interval: Dict[str, datetime]):
+def data_slicing(data:pd.DataFrame,interval: Dict[str, datetime]):
     """
     - split data into training, validation and testing
     - in case your model does not take validation data, you can just split it into training and testing
